@@ -51,9 +51,20 @@ from fastapi import FastAPI
 app = FastAPI()
 
 #declare this method will provide response for the root path of this server
-#the method should be get
+#the method should be get and notice the async symbol this means the method uses coroutine system instead of original sync way.
 #try to visit http://localhost:8000  you can see the JSON printed in your browser
 #8000 is the default port for uvicorn
 @app.get("/")
-def read_info():
+async def read_info():
     return {"message":"Hello FastAPI"}
+
+
+# About coroutine system
+# if you have developed web service in traditional Java, you may know that each request would be executed by a thread in server, and the server holds a threadpool exeucting those threads.
+# however, this means the os will switch threads on one core, and the switching operation costs high (move the stack frames, restore variables and so forth)
+# in coroutine system(Python: ASGI, Go: Goroutine, Scala: Actor, Java: Vritual Thread) each request will be executed by coroutine
+# and one thread can have thousands of coroutines, which means the os will not switch thread frequently.
+# instead, the coroutine system will switch coroutine based on events (for example if we invoke await, that means we send an event telling the coroutine system that we need to wait a conditioin)
+# the system will exeucte other coroutines.
+# so that in this kind of applications, the os rarely switches threads and the cores of CPU will be busy forever(hopefully)
+# It will boost up effeciency dramatically in IO intensive applications by promoting the throughout.
