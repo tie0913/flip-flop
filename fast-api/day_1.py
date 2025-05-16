@@ -40,6 +40,7 @@
 #       you may start your uvicorn by command 'python -m uvicorn file_name:app --reload'
 #
 # 9. open your browser and visit http://localhost:8000 see what happens.
+#    you may find swagger page by visiting http://localhost:8080/docs
 #
 
 
