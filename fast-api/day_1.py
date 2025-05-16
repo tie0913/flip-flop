@@ -13,6 +13,8 @@
 #       this will activate the virtual environment 
 #       now you may install dependencies by pip in this virtual environment
 #       if you want to exit the virtual environment, you may execute 'deactivate' in it.
+#      
+#       if you are working on Windows you need to use command '.\venv\Scripts\activate to activate your venv and use 'deactivate' to exit the virtual enviroment
 #
 # 4. execute 'pip install fastapi uvicorn'
 #       fastapi is a framework based on ASGI providing coroutine system which allows us to develop asynchronized program by async and await
@@ -20,6 +22,7 @@
 #
 # 5. if you want to record all your dependencies in this virtual envrionment you may execute 'pip freeze > requirements'
 #       all the dependencies will be writtern into the file 'requirements' you may use it when deploy your code to another environment or sandbox
+#       when you want to work on your project by another computer, you may use 'pip install -r requirements' to recover your dependencies in your virtual envrionment
 #
 # 6. create a python file my file's name is day_1.py you can read code and comment in this file 
 #
@@ -31,6 +34,11 @@
 #       file_name is your python file's name, mine is day_1, so my command should be 'uvicorn day_1:app --reload
 #       app is the instance of FastAPI which we have created in this file
 #       --reload tells the server that it needs to reload the code when it is modified.
+#
+#       If you are working on Windows, when starting the uvicorn, you may have errors 
+#            Program 'uvicorn.exe' failed to run: Access is deniedAt line:1 char:1
+#       you may start your uvicorn by command 'python -m uvicorn file_name:app --reload'
+#
 # 9. open your browser and visit http://localhost:8000 see what happens.
 #
 
