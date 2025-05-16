@@ -12,6 +12,7 @@
 # 3. execute 'source venv/bin/activate'
 #       this will activate the virtual environment 
 #       now you may install dependencies by pip in this virtual environment
+#       if you want to exit the virtual environment, you may execute 'deactivate' in it.
 #
 # 4. execute 'pip install fastapi uvicorn'
 #       fastapi is a framework based on ASGI providing coroutine system which allows us to develop asynchronized program by async and await
