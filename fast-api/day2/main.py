@@ -75,6 +75,6 @@ from fastapi import Depends
 # 2. provide default value for this parameter when defining the method
 @server.get("/save_person_by_get")
 async def save_person_by_get(p:Person = Depends()):
-    return {"person": p, "pet": p2}
+    return {"person": p}
 # 3. we cannot add another parameter of Pet, because both Pet and person have the same attribute name and age. 
 #       get method can not recogonize which parameter the name belongs to
