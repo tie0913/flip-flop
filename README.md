@@ -10,3 +10,4 @@ I have used InteliJ for several years. But I am always confused by all kinds of 
 |:--|:--|
 |vscode|daily operations|
 |fast-api|basic web project by fast-api and python3|
+|scala-with-gradle|basic playground of scala and gradle|
