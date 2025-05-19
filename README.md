@@ -9,5 +9,5 @@ I have used InteliJ for several years. But I am always confused by all kinds of 
 |name|decsription|
 |:--|:--|
 |vscode|daily operations|
-|fast-api|basic web project by fast-api and python3|
-|scala-with-gradle|basic playground of scala and gradle|
+|fast-api|Basic web project by fast-api and python3|
+|scala-playground|It is my scala practice space|
