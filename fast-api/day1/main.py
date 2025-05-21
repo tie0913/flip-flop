@@ -24,14 +24,14 @@
 #       all the dependencies will be writtern into the file 'requirements' you may use it when deploy your code to another environment or sandbox
 #       when you want to work on your project by another computer, you may use 'pip install -r requirements' to recover your dependencies in your virtual envrionment
 #
-# 6. create a python file my file's name is day_1.py you can read code and comment in this file 
+# 6. create a python file my file's name is main.py you can read code and comment in this file 
 #
 # 7. double check whether you entered the virtual environment.
 #       if the prompt of your terminal displays (venv) in the front of the line, you are in the correct environment
 #       otherwise, execute step 3.
 #
 # 8. in your project directory execute 'uvicorn file_name:app --reload'
-#       file_name is your python file's name, mine is day_1, so my command should be 'uvicorn day_1:app --reload
+#       file_name is your python file's name, mine is day1.main, so my command should be 'uvicorn day1.main:app --reload
 #       app is the instance of FastAPI which we have created in this file
 #       --reload tells the server that it needs to reload the code when it is modified.
 #
