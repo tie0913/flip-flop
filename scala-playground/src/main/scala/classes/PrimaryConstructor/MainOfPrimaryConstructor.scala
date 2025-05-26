@@ -1,4 +1,5 @@
-package classes
+package classes.primaryconstructor
+import primaryconstructor.PrimaryConstructor
 
 object MainOfPrimaryConstructor extends App{
     val p = new PrimaryConstructor("Master Roshin", 95, "male", 500000.0)
