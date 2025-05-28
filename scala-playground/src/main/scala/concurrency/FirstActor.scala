@@ -1,5 +1,0 @@
-package concurrency
-class FirstActor {
-  
- 
-}

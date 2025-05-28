@@ -1,4 +1,0 @@
-package funtional
-
-class FunctionalMain {
-}
