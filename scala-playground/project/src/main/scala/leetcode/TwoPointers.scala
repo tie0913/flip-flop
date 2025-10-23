@@ -5,6 +5,9 @@ object TwoPointers extends App{
     val elems = arr.toList
     println(LeetCode26.instructonal(arr));   
     println(LeetCode26.functional(elems));   
+
+    val arr2 = Array(0,1,2,2,3,0,4,2)
+    println(LeetCode27.instruction(arr2, 2))
 }
 
 /**
@@ -71,5 +74,46 @@ object LeetCode26{
             
         }
         slow + 1
+    }
+}
+
+object LeetCode27{
+
+    def fuctional[T](list:List[T], v:T): Int = {
+        /**
+          * 这个collect是要求一个 partialfunction的
+          */
+        list.collect{
+            case x if x != v => x
+        }.size
+        /**
+          * 直接filter也很好
+          */
+        list.filter(_ == v).size
+
+        /* 空间都省了，直接count简单粗暴有效 */
+        list.count( _ != v)
+    }
+
+
+    def instruction[T](arr:Array[T], v:T): Int = {
+
+
+        var slow = 0
+        var fast = 0
+
+        while(fast < arr.length){
+            if(arr(fast) != v){
+                if(arr(slow) == v){
+                    arr(slow) = arr(fast)
+                    //arr(fast) = v
+                }
+                slow += 1
+            }
+            fast += 1
+        }
+
+
+        slow
     }
 }
