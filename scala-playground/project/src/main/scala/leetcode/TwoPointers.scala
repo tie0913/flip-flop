@@ -8,6 +8,9 @@ object TwoPointers extends App{
 
     val arr2 = Array(0,1,2,2,3,0,4,2)
     println(LeetCode27.instruction(arr2, 2))
+
+
+    println(LeetCode1480.instruction(Array(1,2,3,4)).mkString(","))
 }
 
 /**
@@ -134,5 +137,68 @@ object LeetCode27{
 
 
         slow
+    }
+}
+
+/**
+ * LeetCode 1480 — Running Sum of 1d Array
+ *
+ * Given an array nums, we define a running sum of an array as
+ * runningSum[i] = sum(nums[0] ... nums[i]).
+ *
+ * Return the running sum of nums.
+ *
+ * Example 1:
+ *   Input:  nums = [1,2,3,4]
+ *   Output: [1,3,6,10]
+ *
+ * Example 2:
+ *   Input:  nums = [1,1,1,1,1]
+ *   Output: [1,2,3,4,5]
+ *
+ * Example 3:
+ *   Input:  nums = [3,1,2,10,1]
+ *   Output: [3,4,6,16,17]
+ *
+ * Constraints:
+ *   - 1 <= nums.length <= 1000
+ *   - -10^6 <= nums[i] <= 10^6
+ */
+object LeetCode1480{
+
+
+    /**
+      * 这里的scanLeft以0为初始值
+      * 每个元素都和前一个结果做计算
+      * 
+      * 区别就是第二个括号里的内会作为一个元素被放到结果数组里
+      * 这样结果数据就有n+1个元素
+      * 
+      * 而tail，就是取最后一个元素之外的所有元素
+      * 
+      * 其实就是说 foldLeft是每次迭代都只返回一个acc，最终拿到的也是一个acc
+      * 但是这个scanLeft是每次迭代返回一个acc，然后把这个acc放到一个数组里了
+      * 
+      * 这样方法结束后，就可以得到一组acc（个数比数据中的元素多一个）
+      *
+      * @param arr
+      * @return
+      */
+    def functional(arr:Array[Int]):Array[Int] = {
+        arr.scanLeft(0)(_+_).tail
+    }
+
+
+    def instruction(arr:Array[Int]):Array[Int] = {
+        val result = arr.clone()
+
+        var index = 1
+
+        while(index < arr.length){
+            result(index) = result(index - 1) + arr(index)
+            index+=1
+        }
+
+        result
     }
 }
